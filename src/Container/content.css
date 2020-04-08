@@ -8,11 +8,28 @@ h1,h2 {
 button{
     display: block;
     margin: auto;
+    font-size: medium;
+    border: 2px solid;
+    color: brown;
+    border-radius: 5px;
+}
+
+.btn-mulai {
+    cursor: not-allowed;
+}
+
+body {
+    background-color: green;
 }
 
 .container {
     width: 600px;
     margin: auto;
+    cursor: url(../Assets/palu1.png), auto;
+}
+
+.container:active {
+    cursor: url(../Assets/palu2.png), auto;
 }
 
 .tanah {
@@ -46,4 +63,31 @@ button{
 
 .tanah.muncul .tikus{
     top: -20px;
+}
+
+@media Screen and (max-width : 650px) {
+    h1,h2 {
+        font-size: 20px;
+    }
+    .container {
+        width: 100%;
+    }
+    .tanah {
+        width: calc(100%/3);
+        height: 30vh;
+    }
+    
+    .tanah::after {
+        width: 100%;
+        background-size: 100%;
+    }
+
+    .tikus {
+        top: 70px;
+        background-size: 60%;
+    }
+
+    .tanah.muncul .tikus{
+        top: -10px;
+    }
 }
